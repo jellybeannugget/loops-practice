@@ -1,17 +1,10 @@
-//Yusef
-//October 27th
-//loops practice
-
-
-public class Example1 {
+public class example1 {
     
     
     public static void main(String[] args) {
         System.out.println(countFactors(24)); 
         System.out.println(isPrime(27));      
-        System.out.println(isPrime(47));  
-        System.out.println(countPrimes(1000));      
-    
+        System.out.println(isPrime(47));      
     }
 
 
@@ -34,14 +27,6 @@ public class Example1 {
         return countFactors(num) == 2;
     }
 
-    public static int countPrimes(int n){
-        int count = 0;
-        for(int i = 2; i<=n; i++){
-            if(isPrime(i) == true){
-                count++;
-            }
-        }
-        return count;
-    }
-
 }
+
+
