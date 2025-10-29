@@ -2,16 +2,40 @@
 //October 27th
 //loops practice
 
+import java.util.*;
 
 public class example1 {
     
     
     public static void main(String[] args) {
-        System.out.println(countFactors(24)); 
-        System.out.println(isPrime(27));      
-        System.out.println(isPrime(47));  
-        System.out.println(countPrimes(47));      
-    
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("There is a random number, try guessing it.");
+        
+        int random = (int)(Math.random()*100 +1);
+        int attempts = 0;
+        int guess = input.nextInt();
+
+        
+        while (guess != random){
+            if (guess < random){
+                System.out.println("Too low");
+            }
+            else if(guess > random) {
+                System.out.println("Too high");
+            }
+              guess = input.nextInt();
+            attempts++;
+        }
+
+        if(guess == random){
+      System.out.println("You got it");
+           System.out.println("It took you " + attempts + " tries");
+           if(attempts <= 7){
+            System.out.println("7 or less tries is impressive, you used a good strategy");
+           }
+        }
+
     }
 
 
@@ -34,14 +58,18 @@ public class example1 {
         return countFactors(num) == 2;
     }
 
-    public static int countPrimes(int n){
-        int count = 0;
-        for(int i = 2; i<=n; i++){
-            if(isPrime(i) == true){
-                count++;
-            }
+public static int countPrimes(int n) {
+    int count = 0;
+    int i = 2;
+
+    while (i <= n) {
+        if (isPrime(i) == true) {
+            count++;
         }
-        return count;
+        i++;
     }
+
+    return count;
+}
 
 }
